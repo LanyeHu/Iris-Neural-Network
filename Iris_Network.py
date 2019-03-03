@@ -77,7 +77,8 @@ for i in range(1, (epoch + 1)):
 print()
 j=0
 for i in range(len(X_test)):
-    print('Actual:', y_test[i], 'Predicted:', np.rint(sess.run(final_output, feed_dict={X_data: [X_test[i]]})))
+    y_pred=np.rint(sess.run(final_output, feed_dict={X_data: [X_test[i]]}))
+    print('Actual:', y_test[i], 'Predicted:', y_pred)
 
     if (y_test[i]==y_pred).all():
         j+=1
