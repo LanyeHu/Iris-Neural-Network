@@ -75,5 +75,10 @@ for i in range(1, (epoch + 1)):
 
 # Prediction
 print()
+j=0
 for i in range(len(X_test)):
     print('Actual:', y_test[i], 'Predicted:', np.rint(sess.run(final_output, feed_dict={X_data: [X_test[i]]})))
+
+    if (y_test[i]==y_pred).all():
+        j+=1
+    accuracy=j/test_size  # Calculate accuracy
